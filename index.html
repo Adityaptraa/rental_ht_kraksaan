@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RENTAL HT</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Menambahkan style untuk harga yang tampil di bawah flip */
+        .price {
+            color: red;
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Style flip card */
+        .flip-card {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -13,32 +53,237 @@
     </header>
     <main id="produk">
         <section class="products">
-                <div class="product">
-                    <h4>HANDY TALKY</h4>
-                    <img src="ht.jpg" alt="Produk 1"></img>
-                    <p class="price">Rp20.000</p></div>
-                <div class="product">
-                    <H4>CLIP ON WIRELES</H4>
-                    <img src="mix.jpg" alt="Produk 2"></img>
-                    <p class="price">Rp20.000</p></div>
-
-                <div class="product">
-                    <H4>PARAREL MIC</H4>
-                    <img src="pararel.jpg" alt="Produk 3"></img>
-                    <p class="price">Rp60.000</p></div>
-                
-                <div class="product">
-                    <H4>KABEL JACK</H4>
-                    <img src="jack.jpg" alt="Produk 2"></img>
-                    <p class="price">Rp40.000</p></div>
+            <div class="product">
+                <h4>HANDY TALKY</h4>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="c:\Users\LENOVO\OneDrive\ドキュメント\uspet\wln.jpg" alt="Handy Talky">
+                        </div>
+                        <div class="flip-card-back">
+                            <head>
+                                <style>
+                                    body {
+                                        font-family: Arial, sans-serif;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                            
+                                    .title {
+                                        text-align: center;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 10px; /* Memberikan jarak kecil ke puisi */
+                                    }
+                            
+                                    .poem {
+                                        text-align: left;
+                                        line-height: 1.8; /* Spasi antar baris */
+                                        margin: 0 20px; /* Margin horizontal */
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="title">WLN KD-C1</div>
+                                <div class="poem">
+                                    Freq 400-470MHz<br>
+                                    16 Channel<br>
+                                    Implanted antenna<br>
+                                    Range ± 5KM <br>
+                                    96x55x22MM<br>
+                                </div>
+                            </body>
+                               </div>
+                        </div>
+                    </div>
+                    <p class="price">Rp 20.000</p>
+                </div>
+            </div>
+            <div class="product">
+                <h4>HANDY TALKY</h4>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="c:\Users\LENOVO\OneDrive\ドキュメント\uspet\bf 1.jpg" alt="Handy Talky">
+                        </div>
+                        <div class="flip-card-back">
+                            <head>
+                                <style>
+                                    body {
+                                        font-family: Arial, sans-serif;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                            
+                                    .title {
+                                        text-align: center;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 10px; /* Memberikan jarak kecil ke puisi */
+                                    }
+                            
+                                    .poem {
+                                        text-align: left;
+                                        line-height: 1.8; /* Spasi antar baris */
+                                        margin: 0 20px; /* Margin horizontal */
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="title">BF-888S</div>
+                                <div class="poem">
+                                    Freq 400-470MHz<br>
+                                    16 Channel<br>
+                                    Antenna<br>
+                                    Range ± 5KM <br>
+                                    60x33x115MM<br>
+                                </div>
+                            </body>
+                               </div>
+                        </div>
+                    </div>
+                    <p class="price">Rp 20.000</p>
+                </div>
+            </div>
+            <div class="product">
+                <h4>CLIP ON WIRELESS</h4>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="c:\Users\LENOVO\OneDrive\ドキュメント\uspet\mix.jpg" alt="Handy Talky">
+                        </div>
+                        <div class="flip-card-back">
+                            <head>
+                                <style>
+                                    body {
+                                        font-family: Arial, sans-serif;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                            
+                                    .title {
+                                        text-align: center;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 10px; /* Memberikan jarak kecil ke puisi */
+                                    }
+                            
+                                    .poem {
+                                        text-align: left;
+                                        line-height: 1.8; /* Spasi antar baris */
+                                        margin: 0 20px; /* Margin horizontal */
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="title">CLIP ON</div>
+                                <div class="poem">
+                                    Freq 40-15KHz<br>
+                                    1 Channel<br>
+                                    Antena tanam<br>
+                                    Range 200 M<br>
+                                    
+                                </div>
+                            </body>
+                               </div>
+                        </div>
+                    </div>
+                    <p class="price">Rp 20.000</p>
+                </div>
+            </div>
+            <div class="product">
+                <h4>PARAREL MIC</h4>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="c:\Users\LENOVO\OneDrive\ドキュメント\uspet\pararel.jpg" alt="Handy Talky">
+                        </div>
+                        <div class="flip-card-back">
+                            <head>
+                                <style>
+                                    body {
+                                        font-family: Arial, sans-serif;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                            
+                                    .title {
+                                        text-align: center;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 10px; /* Memberikan jarak kecil ke puisi */
+                                    }
+                            
+                                    .poem {
+                                        text-align: left;
+                                        line-height: 1.8; /* Spasi antar baris */
+                                        margin: 0 20px; /* Margin horizontal */
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="title">PARAREL</div>
+                                <div class="poem">
+                                    Input 8<br>
+                                    Output 2<br>
+                                    Ringan<br>
+                                    28x14x9,5CM<br>
+                                </div>
+                            </body>
+                               </div>
+                        </div>
+                    </div>
+                    <p class="price">Rp 60.000</p>
+                </div>
+            </div>
+            <div class="product">
+                <h4>JACK CABLE</h4>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="c:\Users\LENOVO\OneDrive\ドキュメント\uspet\jack.jpg" alt="Handy Talky">
+                        </div>
+                        <div class="flip-card-back">
+                            <head>
+                                <style>
+                                    body {
+                                        font-family: Arial, sans-serif;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                            
+                                    .title {
+                                        text-align: center;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 10px; /* Memberikan jarak kecil ke puisi */
+                                    }
+                            
+                                    .poem {
+                                        text-align: left;
+                                        line-height: 1.8; /* Spasi antar baris */
+                                        margin: 0 20px; /* Margin horizontal */
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="title">CABLE</div>
+                                <div class="poem">
+                                    Panjang 10 M<br>
+                                    Ringan<br>
+                                    Mixer-pararel<br>
+                                    
+                                </div>
+                            </body>
+                               </div>
+                        </div>
+                    </div>
+                    <p class="price">Rp 40.000</p>
+                </div>
+            </div>
+            <!-- Tambahkan produk lain dengan struktur serupa -->
         </section>
-    </main>
+    </main>
     <nav>
-        
         <a href="https://wa.me/6285176871609?text=Hai%20Kak%2C%20saya%20mau%20tanya%20soal%20ht%20dong" class="btn">Pesan Sekarang</a>
     </nav>
     <footer>
-        <a href="https://www.instagram.com/rentalhtkraksaan?igsh=d2NnaXdpMWhvam1o" class="btn">RENTAL HT KRAKSAAN</a>
+        <a>RENTAL HT KRAKSAAN</a>
     </footer>
 </body>
 </html>
