@@ -1,271 +1,284 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RENTAL HT</title>
-    <style>
-        /* General Styling */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom right, #1a1a2e, #16213e);
-            color: white;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RENTAL HT</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        header {
-            padding: 20px 0;
-            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-        }
+    header {
+      padding: 20px 0;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            margin: 10px 0 0;
-        }
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 0;
+    }
 
-        nav {
-            margin: 20px 0;
-        }
+    main {
+      flex: 1;
+    }
 
-        nav .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #d32525;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+    }
 
-        nav .btn:hover {
-            background-color: #20c857;
-        }
+    .product {
+      background: #24243e;
+      padding: 15px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+    }
 
-        .note {
-            font-size: 0.9rem;
-            margin-top: 10px;
-            color: #e4e4e4;
-        }
+    .product h4 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
 
-        footer {
-            padding: 10px 0;
-            background-color: #0f0c29;
-            font-size: 0.9rem;
-            color: #ffffff;
-        }
+    .flip-card {
+      width: 200px;
+      height: 200px;
+      perspective: 1000px;
+      margin: auto;
+      margin-bottom: 15px;
+    }
 
-        /* Products Section */
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            padding: 20px;
-        }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
 
-        .product {
-            background: #24243e;
-            padding: 10px;
-            border-radius: 10px;
-            width: 250px;
-            text-align: center;
-        }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
 
-        .flip-card {
-            width: 200px;
-            height: 200px;
-            perspective: 1000px;
-            margin: auto;
-        }
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
 
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
+    .flip-card-back {
+      background-color: #1f1f2e;
+      color: white;
+      transform: rotateY(180deg);
+    }
 
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box;
-        }
+    .product .price {
+      font-size: 1.2rem;
+      color: #ff0000;
+      font-weight: bold;
+      margin-top: 10px;
+    }
 
-        .flip-card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    nav {
+      padding: 20px 0 10px;
+    }
 
-        .flip-card-back {
-            background-color: #1f1f2e;
-            color: white;
-            transform: rotateY(180deg);
-        }
+    nav .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #d32525;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
 
-        .product .price {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            color: #ff0000;
-            font-weight: bold;
-        }
-    </style>
+    nav .btn:hover {
+      background-color: #20c857;
+      color: #0f0c29;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: #e4e4e4;
+    }
+
+    footer {
+      padding: 10px 0;
+      background-color: #0f0c29;
+      font-size: 0.9rem;
+      color: #ffffff;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>RENTAL HT KRAKSAAN</h1>
-        <p>MENGATASI MASALAH KOMUNIKASI</p>  
-    </header>
+  <header>
+    <h1>RENTAL HT KRAKSAAN</h1>
+    <p>MENGATASI MASALAH KOMUNIKASI</p>  
+  </header>
 
-    <main id="produk">
-        <section class="products">
-            <!-- Produk 1 -->
-            <div class="product">
-                <h4>HANDY TALKY</h4>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="wln.jpg" alt="Handy Talky">
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="title">WLN KD-C1</div>
-                            <div class="poem">
-                                Freq 400-470MHz<br>
-                                16 Channel<br>
-                                Implanted antenna<br>
-                                Range ± 5KM<br>
-                                96x55x22MM<br>
-                                INCLUDE EARPHONE
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="price">Rp 20.000</p>
+  <main>
+    <section class="products">
+      <!-- Produk 1 -->
+      <div class="product">
+        <h4>WLN KD-C1</h4>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="wln.jpg" alt="Handy Talky WLN">
             </div>
-
-            <!-- Produk 2 -->
-            <div class="product">
-                <h4>HANDY TALKY</h4>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="bf 1.jpg" alt="Handy Talky">
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="title">BF-888S</div>
-                            <div class="poem">
-                                Freq 400-470MHz<br>
-                                16 Channel<br>
-                                Antenna<br>
-                                Range ± 5KM<br>
-                                60x33x115MM<br>
-                                NO EARPHONE
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="price">Rp 15.000</p>
+            <div class="flip-card-back">
+              <div class="title"></div>
+              <div class="poem">
+                Freq 400-470MHz<br>
+                16 Channel<br>
+                Implanted antenna<br>
+                Range ± 5KM<br>
+                96x55x22MM<br>
+                INCLUDE EARPHONE
+              </div>
             </div>
+          </div>
+        </div>
+        <p class="price">Rp 20.000</p>
+      </div>
 
-            <!-- Produk 3 -->
-            <div class="product">
-                <h4>CLIP ON WIRELESS</h4>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="mix.jpg" alt="Clip On">
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="title">CLIP ON</div>
-                            <div class="poem">
-                                Freq 40-15KHz<br>
-                                1 Channel<br>
-                                Antena tanam<br>
-                                Range 200 M<br>
-                                NO BATERAI
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="price">Rp 20.000</p>
+      <!-- Produk 2 -->
+      <div class="product">
+        <h4>BF-888 S</h4>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="bf 1.jpg" alt="Handy Talky BF">
             </div>
-
-            <!-- Produk 4 -->
-            <div class="product">
-                <h4>PARAREL MIC</h4>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="pararel.jpg" alt="Pararel Mic">
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="title">PARAREL</div>
-                            <div class="poem">
-                                Input 8<br>
-                                Output 2<br>
-                                Ringan<br>
-                                28x14x9,5CM
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="price">Rp 45.000</p>
+            <div class="flip-card-back">
+              <div class="title"></div>
+              <div class="poem">
+                Freq 400-470MHz<br>
+                16 Channel<br>
+                Antenna<br>
+                Range ± 5KM<br>
+                60x33x115MM<br>
+                NO EARPHONE
+              </div>
             </div>
+          </div>
+        </div>
+        <p class="price">Rp 15.000</p>
+      </div>
 
-            <!-- Produk 5 -->
-            <div class="product">
-                <h4>JACK CABLE</h4>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="jack.jpg" alt="Jack Cable">
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="title">CABLE</div>
-                            <div class="poem">
-                                Panjang 10 M<br>
-                                Ringan<br>
-                                Mixer-pararel
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="price">Rp 30.000</p>
+      <!-- Produk 3 -->
+      <div class="product">
+        <h4>CLIP ON WIRELESS</h4>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="mix.jpg" alt="Clip On">
             </div>
-        </section>
-    </main>
+            <div class="flip-card-back">
+              <div class="title"></div>
+              <div class="poem">
+                Freq 40-15KHz<br>
+                1 Channel<br>
+                Antena tanam<br>
+                Range 200 M<br>
+                NO BATERAI
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="price">Rp 20.000</p>
+      </div>
 
-    <nav>
-        <a href="https://wa.me/6285176871609?text=Hai%20Kak%2C%20saya%20mau%20sewa%20ht%20nih" class="btn">Pesan Sekarang</a>
-        <p class="note">*Jika pesan mic, disarankan juga menyewa pararel & jack agar lancar (jaga-jaga aja)</p>
-    </nav>
+      <!-- Produk 4 -->
+      <div class="product">
+        <h4>PARAREL MIC</h4>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="pararel.jpg" alt="Pararel Mic">
+            </div>
+            <div class="flip-card-back">
+              <div class="title"></div>
+              <div class="poem">
+                Input : 8<br>
+                Output : 2<br>
+                Ringan<br>
+                28x14x9,5CM
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="price">Rp 45.000</p>
+      </div>
 
-    <footer>
-        RENTAL HT KRAKSAAN
-    </footer>
+      <!-- Produk 5 -->
+      <div class="product">
+        <h4>JACK CABLE</h4>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="jack.jpg" alt="Jack Cable">
+            </div>
+            <div class="flip-card-back">
+              <div class="title"></div>
+              <div class="poem">
+                Panjang 10 M<br>
+                Ringan<br>
+                Mixer-pararel
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="price">Rp 30.000</p>
+      </div>
+    </section>
+  </main>
+
+  <nav>
+    <a href="https://wa.me/6285176871609?text=Hai%20Kak%2C%20saya%20mau%20sewa%20ht%20nih" class="btn">Pesan Sekarang</a>
+    <p class="note">*Jika pesan mic, disarankan juga menyewa pararel & jack agar lancar (jaga-jaga aja)</p>
+  </nav>
+
+  <footer>
+    RENTAL HT KRAKSAAN
+  </footer>
 </body>
 </html>
